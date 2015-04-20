@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+//------------------------------------------------------
+//  サンプルソース（sample4-2-socket.html）
+//    socket.io用のクライアント側処理
+//------------------------------------------------------
+-->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  $(function () {
+  
+    // socket.ioの処理開始
+    var socket = io.connect();
+
+    // event1イベントを受信
+    socket.on('event1', function (data) {
+
+      var rc = prompt(data);
+
+      // ################### START #####################
+      // アジェンダに従ってソースを記述してみましょう。
+      // ###################  END  #####################
+    });
+  });
+</script>
+</head>
+<body>
+<form method="post">
+  <div class="row">
+    <h1>sample4</h1>
+  </div>
+</form>
+<div>
+</body>
+</html>

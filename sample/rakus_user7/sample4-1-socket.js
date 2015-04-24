@@ -37,11 +37,15 @@ io.sockets.on('connection', function (socket) {
 
   // event1イベントを送信（全クライアント）
   io.sockets.emit('event1','接続しました');
-  
+
   // ################### START #####################
-  // 
-  // アジェンダに従ってソースを記述してみましょう。
-  // 
+  socket.on('event2', function (data) {
+    console.log('入力値： ' + data);
+    //␣event3イベントを送信（自クライアントのみ）
+    socket.emit('event3', '自分が入力：' + data);
+    //␣event4イベントを送信（自クライアント以外）
+    socket.broadcast.emit('event4', '他ブラウザで入力： ' + data);
+  });
   // ###################  END  #####################
 });
 

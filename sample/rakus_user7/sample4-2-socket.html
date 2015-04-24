@@ -12,7 +12,7 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
   $(function () {
-  
+
     // socket.ioの処理開始
     var socket = io.connect();
 
@@ -22,7 +22,15 @@
       var rc = prompt(data);
 
       // ################### START #####################
-      // アジェンダに従ってソースを記述してみましょう。
+      socket.emit('event2', rc);
+      //␣event3イベントを受信
+      socket.on('event3', function (data) {
+        alert(data);
+      });
+      //␣event4イベントを受信
+      socket.on('event4', function (data) {
+        alert(data);
+      });
       // ###################  END  #####################
     });
   });

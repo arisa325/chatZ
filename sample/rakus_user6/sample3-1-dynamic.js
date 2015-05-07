@@ -23,9 +23,9 @@ function onRequest(req, res) {
   console.log('onRequest!!');
 
   // ################### START #####################
-  // 
-  // アジェンダに従ってソースを記述してみましょう。
-  // 
+  ejsData = fs.readFileSync('./sample3-2-dynamic.ejs', 'UTF-8');
+  var str = 'あいうえお';
+  data = ejs.render(ejsData, {label : str});
   // ###################  END  #####################
 
   // レスポンスの出力

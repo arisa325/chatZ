@@ -21,10 +21,21 @@
 
       var rc = prompt(data);
 
-      // ################### START #####################
-      // アジェンダに従ってソースを記述してみましょう。
-      // ###################  END  #####################
+      // event2イベントを送信
+      socket.emit('event2', rc);
+
+      // event3イベントを受信 
+      socket.on('event3', function(data) {
+        alert(data);
+      });
+
+      // event4イベントを受信
+      socket.on('event4', function(data) {
+        alert(data);
+      });
+
     });
+
   });
 </script>
 </head>

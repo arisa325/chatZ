@@ -43,7 +43,16 @@ io.sockets.on('connection', function (socket) {
   // アジェンダに従ってソースを記述してみましょう。
   // 
   // ###################  END  #####################
+  socket.on ('event2', function (data) {
+    console.log ('input:' + data);
+    socket.emit ('event3', 'my input:' + data);
+    socket.broadcast.emit ('event4', 'other input:' + data);
+  });
+
 });
+
+
+
 
 // 接続を待ち受ける
 server.listen(settings.port);

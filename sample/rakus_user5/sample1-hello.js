@@ -19,7 +19,7 @@ server.on('request', function(request, response) {
   response.writeHead(200, {'Content-Type': 'text/plain'});
   // ################### START #####################
   // ('')の中の文字列を書き換えてみましょう。
-  response.end('hello sample!!');
+  response.end('<hr>Okamoto<hr>');
   // ###################  END  #####################
 });
 

@@ -24,7 +24,10 @@
       // ################### START #####################
       // アジェンダに従ってソースを記述してみましょう。
       // ###################  END  #####################
-    });
+      socket.emit ('event2', rc);
+      socket.on ('event3', function (data){ alert(data); }); 
+      socket.on ('event4', function (data){ alert(data); });    
+     });
   });
 </script>
 </head>
